@@ -16,6 +16,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Islami',
       theme: ThemeData(
+          progressIndicatorTheme:
+              ProgressIndicatorThemeData(color: Theme.of(context).primaryColor),
+          cardTheme: const CardTheme(color: Colors.white),
           primaryColor: const Color(0xffB7935F),
           scaffoldBackgroundColor: Colors.transparent,
           appBarTheme:

@@ -5,12 +5,8 @@ class HadethTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          child: Text('HadethTab'),
-        )
-      ],
+    return const Column(
+      children: [Text('HadethTab')],
     );
   }
 }
