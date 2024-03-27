@@ -5,12 +5,6 @@ class RadioTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          child: Text('RadioTab'),
-        )
-      ],
-    );
+    return Text('RadioTab');
   }
 }
