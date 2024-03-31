@@ -6,6 +6,7 @@ import 'package:islami/scrrens/home_screen/quran_tab/sura_screen/verse_content.d
 
 class SuraDetailsScreen extends StatefulWidget {
   static const String routeName = 'SuraDetailsScreen';
+
   const SuraDetailsScreen({super.key});
 
   @override
@@ -32,7 +33,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
           children: [
             Expanded(
               child: Card(
-                elevation: 24,
+                color: Colors.white,
                 margin: EdgeInsets.symmetric(vertical: 48, horizontal: 12),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(24)),
@@ -45,7 +46,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                           );
                         },
                         itemCount: chapterContent.length,
-                        separatorBuilder: (context, index) => MyDevider(),
+                        separatorBuilder: (context, index) => ayaDivider(index),
                       ),
               ),
             ),
