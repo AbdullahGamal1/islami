@@ -6,8 +6,11 @@ import 'sura_details_screen_args.dart';
 class SuraNameWidget extends StatelessWidget {
   String title;
   int index;
+
   SuraNameWidget({required this.title, required this.index});
 
+//SuraDetailsScreenArgs يتم عرض اسامي السور وعند الضغط يتم النقل الى صفحة كل سورة عبر
+// ويتم عبره نقل كل سورة باسمها ومحتواها
   @override
   Widget build(BuildContext context) {
     return InkWell(

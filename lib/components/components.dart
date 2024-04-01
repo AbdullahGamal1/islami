@@ -5,3 +5,5 @@ Widget MyDevider() => Container(
       width: double.infinity,
       color: Color(0xffB7935F),
     );
+
+ayaDivider(index) => Text('{ ${index + 1} }');

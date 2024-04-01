@@ -6,6 +6,7 @@ import 'package:islami/scrrens/home_screen/quran_tab/sura_screen/verse_content.d
 
 class SuraDetailsScreen extends StatefulWidget {
   static const String routeName = 'SuraDetailsScreen';
+
   const SuraDetailsScreen({super.key});
 
   @override
@@ -15,6 +16,14 @@ class SuraDetailsScreen extends StatefulWidget {
 class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
   List<String> chapterContent = [];
 
+  void readFile(int suraIndex) async {
+    String text =
+        await rootBundle.loadString('assets/files/quran/${suraIndex + 1}.txt');
+    chapterContent = text.split('\n');
+    setState(() {});
+  }
+
+  //الصفحة الخاصة بعرض محتوى السور من الايات
   @override
   Widget build(BuildContext context) {
     var args =
@@ -32,7 +41,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
           children: [
             Expanded(
               child: Card(
-                elevation: 24,
+                color: Colors.white,
                 margin: EdgeInsets.symmetric(vertical: 48, horizontal: 12),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(24)),
@@ -45,7 +54,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                           );
                         },
                         itemCount: chapterContent.length,
-                        separatorBuilder: (context, index) => MyDevider(),
+                        separatorBuilder: (context, index) => ayaDivider(index),
                       ),
               ),
             ),
@@ -53,12 +62,5 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
         ),
       ),
     );
-  }
-
-  void readFile(int suraIndex) async {
-    String text =
-        await rootBundle.loadString('assets/files/${suraIndex + 1}.txt');
-    chapterContent = text.split('\n');
-    setState(() {});
   }
 }
