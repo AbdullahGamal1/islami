@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:islami/scrrens/home_screen/quran_tab/sura_screen/sura_name_widget.dart';
 
@@ -13,11 +14,14 @@ class QuranTab extends StatelessWidget {
 
     return Column(
       children: [
-        Image.asset(
-          'assets/images/quranBook.png',
-          fit: BoxFit.fill,
-          height: hieght * .2,
-          width: width * .4,
+        Expanded(
+          flex: 1,
+          child: Image.asset(
+            'assets/images/quranBook.png',
+            fit: BoxFit.fill,
+            height: hieght * .2,
+            width: width * .4,
+          ),
         ),
         Container(
           height: 1,
@@ -34,6 +38,7 @@ class QuranTab extends StatelessWidget {
           color: Theme.of(context).primaryColor,
         ),
         Expanded(
+            flex: 3,
             child: ListView.separated(
                 itemBuilder: (context, index) {
                   return SuraNameWidget(title: suraNames[index], index: index);

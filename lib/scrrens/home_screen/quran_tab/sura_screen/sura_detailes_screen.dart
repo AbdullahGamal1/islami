@@ -16,6 +16,14 @@ class SuraDetailsScreen extends StatefulWidget {
 class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
   List<String> chapterContent = [];
 
+  void readFile(int suraIndex) async {
+    String text =
+        await rootBundle.loadString('assets/files/quran/${suraIndex + 1}.txt');
+    chapterContent = text.split('\n');
+    setState(() {});
+  }
+
+  //الصفحة الخاصة بعرض محتوى السور من الايات
   @override
   Widget build(BuildContext context) {
     var args =
@@ -54,12 +62,5 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
         ),
       ),
     );
-  }
-
-  void readFile(int suraIndex) async {
-    String text =
-        await rootBundle.loadString('assets/files/${suraIndex + 1}.txt');
-    chapterContent = text.split('\n');
-    setState(() {});
   }
 }
