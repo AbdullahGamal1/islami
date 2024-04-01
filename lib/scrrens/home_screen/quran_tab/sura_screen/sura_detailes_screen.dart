@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami/components/components.dart';
+import 'package:islami/my_theme_data/my_them_data.dart';
 import 'package:islami/scrrens/home_screen/quran_tab/sura_screen/sura_details_screen_args.dart';
 import 'package:islami/scrrens/home_screen/quran_tab/sura_screen/verse_content.dart';
 
@@ -32,21 +33,24 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
       readFile(args.index);
     }
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/images/bg3.png'), fit: BoxFit.fill)),
+              image: AssetImage(MyThemeData.themeMode == ThemeMode.light
+                  ? 'assets/images/bg3.png'
+                  : 'assets/images/bg_dark.png'),
+              fit: BoxFit.fill)),
       child: Scaffold(
         appBar: AppBar(title: Text(args.title)),
         body: Column(
           children: [
             Expanded(
               child: Card(
-                color: Colors.white,
-                margin: EdgeInsets.symmetric(vertical: 48, horizontal: 12),
+                margin:
+                    const EdgeInsets.symmetric(vertical: 48, horizontal: 12),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(24)),
                 child: chapterContent.isEmpty
-                    ? CircularProgressIndicator()
+                    ? const CircularProgressIndicator()
                     : ListView.separated(
                         itemBuilder: (context, index) {
                           return VerseContent(
