@@ -7,7 +7,7 @@ class SuraNameWidget extends StatelessWidget {
   String title;
   int index;
 
-  SuraNameWidget({required this.title, required this.index});
+  SuraNameWidget({super.key, required this.title, required this.index});
 
 //SuraDetailsScreenArgs يتم عرض اسامي السور وعند الضغط يتم النقل الى صفحة كل سورة عبر
 // ويتم عبره نقل كل سورة باسمها ومحتواها
@@ -20,10 +20,7 @@ class SuraNameWidget extends StatelessWidget {
       },
       child: Container(
         alignment: Alignment.center,
-        child: Text(
-          title,
-          style: const TextStyle(fontSize: 24),
-        ),
+        child: Text(title, style: Theme.of(context).textTheme.bodyText1),
       ),
     );
   }

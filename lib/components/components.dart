@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-Widget MyDevider() => Container(
+Widget MyDivider(context) => Container(
       height: 1,
       width: double.infinity,
-      color: Color(0xffB7935F),
+      color: Theme.of(context).canvasColor,
     );
 
 ayaDivider(index) => Text('{ ${index + 1} }');

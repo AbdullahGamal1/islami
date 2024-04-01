@@ -13,7 +13,7 @@ class VerseContent extends StatelessWidget {
       child: Text(
         content,
         textAlign: TextAlign.center,
-        style: const TextStyle(fontSize: 24),
+        style: Theme.of(context).textTheme.bodyText1,
       ),
     );
   }
