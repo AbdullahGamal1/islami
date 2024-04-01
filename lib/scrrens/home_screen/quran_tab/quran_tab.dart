@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:islami/components/components.dart';
 import 'package:islami/scrrens/home_screen/quran_tab/sura_screen/sura_name_widget.dart';
 
 import '../../../constance/constance.dart';
@@ -28,9 +28,9 @@ class QuranTab extends StatelessWidget {
           width: double.infinity,
           color: Theme.of(context).primaryColor,
         ),
-        const Text(
+        Text(
           'sura name',
-          style: TextStyle(fontSize: 24),
+          style: Theme.of(context).textTheme.headline5,
         ),
         Container(
           height: 1,
@@ -43,11 +43,7 @@ class QuranTab extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return SuraNameWidget(title: suraNames[index], index: index);
                 },
-                separatorBuilder: (context, index) => Container(
-                      height: 1,
-                      width: double.infinity,
-                      color: Theme.of(context).primaryColor,
-                    ),
+                separatorBuilder: (context, index) => MyDivider(context),
                 itemCount: suraNames.length))
       ],
     );

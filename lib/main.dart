@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:islami/scrrens/home_screen/hadeth_tab/hadeth_details_screen.dart';
+import 'package:islami/my_theme_data/my_them_data.dart';
+import 'package:islami/scrrens/home_screen/hadith_tab/hadith_details_screen.dart';
 import 'package:islami/scrrens/home_screen/home_screen.dart';
 import 'package:islami/scrrens/home_screen/quran_tab/sura_screen/sura_detailes_screen.dart';
 import 'package:islami/scrrens/splash.dart';
@@ -21,23 +22,14 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Islami',
-      theme: ThemeData(
-          progressIndicatorTheme:
-              ProgressIndicatorThemeData(color: Color(0xffB7935F)),
-          cardTheme: const CardTheme(color: Colors.white),
-          primaryColor: const Color(0xffB7935F),
-          scaffoldBackgroundColor: Colors.transparent,
-          appBarTheme:
-              const AppBarTheme(color: Colors.transparent, centerTitle: true),
-          bottomNavigationBarTheme: BottomNavigationBarThemeData(
-              backgroundColor: Theme.of(context).primaryColor,
-              selectedItemColor: Colors.black54,
-              unselectedItemColor: Colors.white)),
+      theme: MyThemeData.lightTheme,
+      darkTheme: MyThemeData.darkTheme,
+      themeMode: MyThemeData.themeMode,
       routes: {
         HomeScreen.routName: (context) => HomeScreen(),
         SplashScreen.routName: (context) => const SplashScreen(),
         SuraDetailsScreen.routeName: (context) => const SuraDetailsScreen(),
-        HadethDetailsScreen.routeName: (context) => HadethDetailsScreen()
+        HadithDetailsScreen.routeName: (context) => const HadithDetailsScreen()
       },
       initialRoute: SplashScreen.routName,
     );

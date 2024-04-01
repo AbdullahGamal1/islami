@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami/components/components.dart';
-import 'package:islami/scrrens/home_screen/hadeth_tab/hadeth.dart';
-import 'package:islami/scrrens/home_screen/hadeth_tab/hadeth_name_widget.dart';
+import 'package:islami/scrrens/home_screen/hadith_tab/hadith.dart';
+import 'package:islami/scrrens/home_screen/hadith_tab/hadith_name_widget.dart';
 
-class HadethTab extends StatefulWidget {
-  HadethTab({super.key});
+class HadithTab extends StatefulWidget {
+  const HadithTab({super.key});
 
   @override
-  State<HadethTab> createState() => _HadethTabState();
+  State<HadithTab> createState() => _HadithabState();
 }
 
-class _HadethTabState extends State<HadethTab> {
-  List<Hadeth> allHadethList = [];
+class _HadithabState extends State<HadithTab> {
+  List<Hadith> allHadithList = [];
 
   @override
   Widget build(BuildContext context) {
-    if (allHadethList.isEmpty) {
-      readHadethFile();
+    if (allHadithList.isEmpty) {
+      readHadithFile();
     }
     return Center(
       child: Column(
@@ -31,9 +31,9 @@ class _HadethTabState extends State<HadethTab> {
             width: double.infinity,
             color: Theme.of(context).primaryColor,
           ),
-          const Text(
-            'Hadeeth ',
-            style: TextStyle(fontSize: 24),
+          Text(
+            'Hadith Number',
+            style: Theme.of(context).textTheme.headline5,
           ),
           Container(
             height: 1,
@@ -42,25 +42,25 @@ class _HadethTabState extends State<HadethTab> {
           ),
           Expanded(
               flex: 5,
-              child: allHadethList.isEmpty
-                  ? Center(
+              child: allHadithList.isEmpty
+                  ? const Center(
                       child: CircularProgressIndicator(),
                     )
                   : ListView.separated(
                       itemBuilder: (context, index) {
-                        return HadethNameWidget(
-                          hadeth: allHadethList[index],
+                        return HadithNameWidget(
+                          hadith: allHadithList[index],
                         );
                       },
-                      separatorBuilder: (context, index) => MyDevider(),
-                      itemCount: allHadethList.length))
+                      separatorBuilder: (context, index) => MyDivider(context),
+                      itemCount: allHadithList.length))
         ],
       ),
     );
   }
 
-  readHadethFile() async {
-    List<Hadeth> hadethList = [];
+  readHadithFile() async {
+    List<Hadith> hadethList = [];
     String fileContent =
         await rootBundle.loadString('assets/files/ahadeth.txt');
     List<String> splittedContent = fileContent.split('#');
@@ -70,10 +70,10 @@ class _HadethTabState extends State<HadethTab> {
       String title = lines[0];
       lines.removeAt(0);
       String content = lines.join('\n');
-      Hadeth hadeth = Hadeth(title: title, content: content);
+      Hadith hadeth = Hadith(title: title, content: content);
       hadethList.add(hadeth);
     }
-    allHadethList = hadethList;
+    allHadithList = hadethList;
     setState(() {});
   }
 }
