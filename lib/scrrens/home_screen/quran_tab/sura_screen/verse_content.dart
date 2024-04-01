@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 
 class VerseContent extends StatelessWidget {
   String content;
-  VerseContent({required this.content});
 
+  VerseContent({super.key, required this.content});
+
+//طريييقة عرض محتوى الاية
   @override
   Widget build(BuildContext context) {
     return Container(

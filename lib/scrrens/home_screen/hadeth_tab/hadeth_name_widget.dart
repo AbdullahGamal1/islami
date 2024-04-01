@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:islami/scrrens/home_screen/hadeth_tab/hadeth.dart';
+import 'package:islami/scrrens/home_screen/hadeth_tab/hadeth_details_screen.dart';
 
-import 'sura_detailes_screen.dart';
-import 'sura_details_screen_args.dart';
+class HadethNameWidget extends StatelessWidget {
+  Hadeth hadeth;
 
-class SuraNameWidget extends StatelessWidget {
-  String title;
-  int index;
-
-  SuraNameWidget({required this.title, required this.index});
+  HadethNameWidget({required this.hadeth});
 
 //SuraDetailsScreenArgs يتم عرض اسامي السور وعند الضغط يتم النقل الى صفحة كل سورة عبر
 // ويتم عبره نقل كل سورة باسمها ومحتواها
@@ -15,13 +13,13 @@ class SuraNameWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.pushNamed(context, SuraDetailsScreen.routeName,
-            arguments: SuraDetailsScreenArgs(title: title, index: index));
+        Navigator.pushNamed(context, HadethDetailsScreen.routeName,
+            arguments: hadeth);
       },
       child: Container(
         alignment: Alignment.center,
         child: Text(
-          title,
+          hadeth.title,
           style: const TextStyle(fontSize: 24),
         ),
       ),
