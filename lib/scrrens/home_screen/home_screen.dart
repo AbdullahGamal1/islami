@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami/my_theme_data/my_them_data.dart';
 import 'package:islami/scrrens/home_screen/hadith_tab/hadith_tab.dart';
 import 'package:islami/scrrens/home_screen/quran_tab/quran_tab.dart';
@@ -8,7 +9,7 @@ import 'package:islami/scrrens/home_screen/tasbeh_tab/tasbeh_tab.dart';
 class HomeScreen extends StatefulWidget {
   static const String routName = 'HomeScreen';
 
-  HomeScreen({super.key});
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -28,7 +29,8 @@ class _HomeScreenState extends State<HomeScreen> {
               fit: BoxFit.fill)),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Islami'),
+          title: Text(AppLocalizations.of(context)!.islami,
+              style: Theme.of(context).textTheme.headline3),
         ),
         body: tabs[selectedTab],
         bottomNavigationBar: BottomNavigationBar(
@@ -42,22 +44,22 @@ class _HomeScreenState extends State<HomeScreen> {
                 backgroundColor: Theme.of(context).primaryColor,
                 icon: const ImageIcon(
                     AssetImage('assets/images/moshaf_icon.png')),
-                label: 'Quran'),
+                label: AppLocalizations.of(context)!.quran),
             BottomNavigationBarItem(
                 backgroundColor: Theme.of(context).primaryColor,
                 icon:
                     const ImageIcon(AssetImage('assets/images/hadet_icon.png')),
-                label: 'Hadeth'),
+                label: AppLocalizations.of(context)!.hadith),
             BottomNavigationBarItem(
                 backgroundColor: Theme.of(context).primaryColor,
                 icon:
                     const ImageIcon(AssetImage('assets/images/sebha_icon.png')),
-                label: 'Tasbeh'),
+                label: AppLocalizations.of(context)!.tasbeh),
             BottomNavigationBarItem(
                 backgroundColor: Theme.of(context).primaryColor,
                 icon:
                     const ImageIcon(AssetImage('assets/images/radio_icon.png')),
-                label: 'Radio')
+                label: AppLocalizations.of(context)!.radio)
           ],
         ),
       ),

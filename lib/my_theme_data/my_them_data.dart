@@ -6,7 +6,7 @@ class MyThemeData {
   static const darkPrimaryColor = Color(0xFF141A2E);
   static const darkAccentColor = Color(0xFFFACC1D);
   static const lightMainTextColor = Color(0xFF242424);
-  static const darkMainTextColor = Color(0xFFF8F8F8);
+  static const darkMainTextColor = Color(0xFFFACC1D);
 
   static ThemeMode themeMode = ThemeMode.dark;
 
@@ -56,8 +56,10 @@ class MyThemeData {
       cardTheme: const CardTheme(color: darkPrimaryColor),
       primaryColor: darkPrimaryColor,
       scaffoldBackgroundColor: Colors.transparent,
-      appBarTheme:
-          const AppBarTheme(color: Colors.transparent, centerTitle: true),
+      appBarTheme: const AppBarTheme(
+          iconTheme: IconThemeData(color: darkAccentColor),
+          color: Colors.transparent,
+          centerTitle: true),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           backgroundColor: darkPrimaryColor,
           selectedItemColor: darkAccentColor,

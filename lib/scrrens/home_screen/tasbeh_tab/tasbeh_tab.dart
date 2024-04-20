@@ -5,6 +5,6 @@ class TasbehTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text('TasbehTab');
+    return const Text('Tasbeh Tab');
   }
 }
