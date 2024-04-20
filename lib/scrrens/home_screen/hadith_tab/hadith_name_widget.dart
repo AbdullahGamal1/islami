@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:islami/scrrens/home_screen/hadith_tab/hadith.dart';
 import 'package:islami/scrrens/home_screen/hadith_tab/hadith_details_screen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class HadithNameWidget extends StatelessWidget {
   Hadith hadith;
 
   HadithNameWidget({super.key, required this.hadith});
-
-//SuraDetailsScreenArgs يتم عرض اسامي السور وعند الضغط يتم النقل الى صفحة كل سورة عبر
-// ويتم عبره نقل كل سورة باسمها ومحتواها
   @override
   Widget build(BuildContext context) {
     return InkWell(
