@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:islami/my_theme_data/my_them_data.dart';
 import 'package:islami/scrrens/home_screen/hadith_tab/hadith.dart';
 
+
 class HadithDetailsScreen extends StatelessWidget {
   static const String routeName = 'HadethDetailsScreen';
 

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:islami/my_theme_data/my_them_data.dart';
 import 'package:islami/scrrens/home_screen/hadith_tab/hadith_details_screen.dart';
 import 'package:islami/scrrens/home_screen/home_screen.dart';
@@ -32,6 +34,17 @@ class _MyAppState extends State<MyApp> {
         HadithDetailsScreen.routeName: (context) => const HadithDetailsScreen()
       },
       initialRoute: SplashScreen.routName,
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('en'), // English
+        Locale('ar'), // Arabic
+      ],
+      locale: Locale('ar'),
     );
   }
 }

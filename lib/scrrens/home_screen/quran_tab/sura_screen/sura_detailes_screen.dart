@@ -4,6 +4,8 @@ import 'package:islami/components/components.dart';
 import 'package:islami/my_theme_data/my_them_data.dart';
 import 'package:islami/scrrens/home_screen/quran_tab/sura_screen/sura_details_screen_args.dart';
 import 'package:islami/scrrens/home_screen/quran_tab/sura_screen/verse_content.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class SuraDetailsScreen extends StatefulWidget {
   static const String routeName = 'SuraDetailsScreen';
@@ -40,7 +42,11 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                   : 'assets/images/bg_dark.png'),
               fit: BoxFit.fill)),
       child: Scaffold(
-        appBar: AppBar(title: Text(args.title)),
+        appBar: AppBar(
+            title: Text(
+          args.title,
+          style: Theme.of(context).textTheme.headline5,
+        )),
         body: Column(
           children: [
             Expanded(
@@ -50,7 +56,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(24)),
                 child: chapterContent.isEmpty
-                    ? const CircularProgressIndicator()
+                    ? const Center(child: CircularProgressIndicator())
                     : ListView.separated(
                         itemBuilder: (context, index) {
                           return VerseContent(
