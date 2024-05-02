@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:islami/scrrens/home_screen/hadith_tab/hadith.dart';
-import 'package:islami/scrrens/home_screen/hadith_tab/hadith_details_screen.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
+import 'package:islami/screens/home_screen/hadith_tab/hadith.dart';
+import 'package:islami/screens/home_screen/hadith_tab/hadith_details_screen.dart';
 
 class HadithNameWidget extends StatelessWidget {
   Hadith hadith;
