@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami/components/components.dart';
-import 'package:islami/scrrens/home_screen/hadith_tab/hadith.dart';
-import 'package:islami/scrrens/home_screen/hadith_tab/hadith_name_widget.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
+import 'package:islami/screens/home_screen/hadith_tab/hadith.dart';
+import 'package:islami/screens/home_screen/hadith_tab/hadith_name_widget.dart';
 
 class HadithTab extends StatefulWidget {
   const HadithTab({super.key});
@@ -34,7 +33,7 @@ class _HadithabState extends State<HadithTab> {
             color: Theme.of(context).primaryColor,
           ),
           Text(
-           AppLocalizations.of(context)!.hadith_number ,
+            AppLocalizations.of(context)!.hadith_number,
             style: Theme.of(context).textTheme.headline5,
           ),
           Container(

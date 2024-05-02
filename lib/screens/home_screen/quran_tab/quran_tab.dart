@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami/components/components.dart';
-import 'package:islami/scrrens/home_screen/quran_tab/sura_screen/sura_name_widget.dart';
+import 'package:islami/screens/home_screen/quran_tab/sura_screen/sura_name_widget.dart';
 
 import '../../../constance/constance.dart';
 

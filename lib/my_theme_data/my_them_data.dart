@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyThemeData {
   static const lightPrimaryColor = Color(0xFFB7935F);
@@ -7,6 +8,7 @@ class MyThemeData {
   static const darkAccentColor = Color(0xFFFACC1D);
   static const lightMainTextColor = Color(0xFF242424);
   static const darkMainTextColor = Color(0xFFFACC1D);
+  static const darkAccentTextColor = Color(0xFFFFFFFF);
 
   static ThemeMode themeMode = ThemeMode.dark;
 
@@ -25,24 +27,24 @@ class MyThemeData {
           backgroundColor: lightPrimaryColor,
           selectedItemColor: Colors.black54,
           unselectedItemColor: Colors.white),
-      textTheme: const TextTheme(
+      textTheme: TextTheme(
         headline3: TextStyle(
-          fontSize: 32,
+          fontSize: 32.sp,
           fontWeight: FontWeight.bold,
           color: lightMainTextColor,
         ),
         headline5: TextStyle(
-          fontSize: 24,
+          fontSize: 24.sp,
           fontWeight: FontWeight.bold,
           color: lightMainTextColor,
         ),
         bodyText1: TextStyle(
-          fontSize: 23,
+          fontSize: 23.sp,
           fontWeight: FontWeight.normal,
           color: lightMainTextColor,
         ),
         bodyText2: TextStyle(
-          fontSize: 19,
+          fontSize: 19.sp,
           fontWeight: FontWeight.normal,
           color: lightMainTextColor,
         ),
@@ -65,24 +67,24 @@ class MyThemeData {
           selectedItemColor: darkAccentColor,
           unselectedItemColor: Colors.white),
       iconTheme: const IconThemeData(color: Colors.white),
-      textTheme: const TextTheme(
+      textTheme: TextTheme(
         headline3: TextStyle(
-          fontSize: 32,
+          fontSize: 32.sp,
           fontWeight: FontWeight.bold,
           color: darkMainTextColor,
         ),
         headline5: TextStyle(
-          fontSize: 24,
+          fontSize: 24.sp,
           fontWeight: FontWeight.bold,
           color: darkMainTextColor,
         ),
         bodyText1: TextStyle(
-          fontSize: 23,
+          fontSize: 18.sp,
           fontWeight: FontWeight.normal,
           color: darkMainTextColor,
         ),
         bodyText2: TextStyle(
-          fontSize: 19,
+          fontSize: 19.sp,
           fontWeight: FontWeight.normal,
           color: darkMainTextColor,
         ),

@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islami/components/components.dart';
 import 'package:islami/my_theme_data/my_them_data.dart';
-import 'package:islami/scrrens/home_screen/quran_tab/sura_screen/sura_details_screen_args.dart';
-import 'package:islami/scrrens/home_screen/quran_tab/sura_screen/verse_content.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
+import 'package:islami/screens/home_screen/quran_tab/sura_screen/sura_details_screen_args.dart';
+import 'package:islami/screens/home_screen/quran_tab/sura_screen/verse_content.dart';
 
 class SuraDetailsScreen extends StatefulWidget {
   static const String routeName = 'SuraDetailsScreen';
@@ -51,8 +50,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
           children: [
             Expanded(
               child: Card(
-                margin:
-                    const EdgeInsets.symmetric(vertical: 48, horizontal: 12),
+                margin: EdgeInsets.symmetric(vertical: 48.w, horizontal: 12.h),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(24)),
                 child: chapterContent.isEmpty

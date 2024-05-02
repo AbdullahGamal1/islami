@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islami/my_theme_data/my_them_data.dart';
-import 'package:islami/scrrens/home_screen/hadith_tab/hadith.dart';
-
+import 'package:islami/screens/home_screen/hadith_tab/hadith.dart';
 
 class HadithDetailsScreen extends StatelessWidget {
   static const String routeName = 'HadethDetailsScreen';
@@ -29,8 +29,8 @@ class HadithDetailsScreen extends StatelessWidget {
               children: [
                 Expanded(
                     child: Card(
-                        margin: const EdgeInsets.symmetric(
-                            vertical: 48, horizontal: 12),
+                        margin: EdgeInsets.symmetric(
+                            vertical: 48.w, horizontal: 12.h),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(24)),
                         child: hadeth.content.isEmpty
