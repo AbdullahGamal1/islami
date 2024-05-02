@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islami/components/components.dart';
-import 'package:islami/my_theme_data/my_them_data.dart';
+import 'package:islami/providers/settings_provider.dart';
 import 'package:islami/screens/home_screen/quran_tab/sura_screen/sura_details_screen_args.dart';
 import 'package:islami/screens/home_screen/quran_tab/sura_screen/verse_content.dart';
+import 'package:provider/provider.dart';
 
 class SuraDetailsScreen extends StatefulWidget {
   static const String routeName = 'SuraDetailsScreen';
@@ -28,6 +29,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
   //الصفحة الخاصة بعرض محتوى السور من الايات
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<SettingsProvider>(context);
     var args =
         ModalRoute.of(context)?.settings.arguments as SuraDetailsScreenArgs;
     if (chapterContent.isEmpty) {
@@ -36,9 +38,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage(MyThemeData.themeMode == ThemeMode.light
-                  ? 'assets/images/bg3.png'
-                  : 'assets/images/bg_dark.png'),
+              image: AssetImage(provider.getBackGroundImage()),
               fit: BoxFit.fill)),
       child: Scaffold(
         appBar: AppBar(

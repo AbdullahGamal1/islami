@@ -7,10 +7,9 @@ class MyThemeData {
   static const darkPrimaryColor = Color(0xFF141A2E);
   static const darkAccentColor = Color(0xFFFACC1D);
   static const lightMainTextColor = Color(0xFF242424);
-  static const darkMainTextColor = Color(0xFFFACC1D);
-  static const darkAccentTextColor = Color(0xFFFFFFFF);
-
-  static ThemeMode themeMode = ThemeMode.dark;
+  static const lightAccentTextColor = Color(0xFFB7935F);
+  static const darkMainTextColor = Color(0xFFFFFFFF);
+  static const darkAccentTextColor = Color(0xFFFACC1D);
 
   static var lightTheme = ThemeData(
       primaryColorLight: lightPrimaryColor,

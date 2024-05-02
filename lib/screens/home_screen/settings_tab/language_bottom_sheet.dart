@@ -4,15 +4,15 @@ import 'package:islami/providers/settings_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class ShowThemeBottomSheet extends StatelessWidget {
-  const ShowThemeBottomSheet({super.key});
+class ShowLanguageBottomSheet extends StatelessWidget {
+  const ShowLanguageBottomSheet({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold();
   }
 
-  void showThemeMenu(BuildContext context) {
+  void showLanguageMenu(BuildContext context) {
     final appLocal = AppLocalizations.of(context);
 
     final provider = Provider.of<SettingsProvider>(context, listen: false);
@@ -36,26 +36,26 @@ class ShowThemeBottomSheet extends StatelessWidget {
               mainAxisSize: MainAxisSize.min, // Set minimum height
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Text(appLocal!.theme_options,
+                Text(appLocal!.language_options,
                     style: Theme.of(context).textTheme.headline5,
                     textAlign: TextAlign.center),
                 const SizedBox(height: 10.0),
                 InkWell(
                   onTap: () {
-                    provider.enableLightMode();
+                    provider.changeLanguage("ar");
                   },
-                  child: provider.themeMode == ThemeMode.light
-                      ? getSelectedWidget(appLocal!.light, context)
-                      : getUnSelectedWidget(appLocal!.light, context),
+                  child: provider.languageCode == "ar"
+                      ? getSelectedWidget('العربية', context)
+                      : getUnSelectedWidget('العربية', context),
                 ),
                 const SizedBox(height: 10.0),
                 InkWell(
                   onTap: () {
-                    provider.enableDarkMode();
+                    provider.changeLanguage("en");
                   },
-                  child: provider.themeMode == ThemeMode.dark
-                      ? getSelectedWidget(appLocal!.dark, context)
-                      : getUnSelectedWidget(appLocal!.dark, context),
+                  child: provider.languageCode == "en"
+                      ? getSelectedWidget('English', context)
+                      : getUnSelectedWidget('English', context),
                 ),
               ],
             ),
