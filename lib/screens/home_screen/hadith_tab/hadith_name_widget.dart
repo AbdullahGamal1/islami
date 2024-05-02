@@ -6,6 +6,7 @@ class HadithNameWidget extends StatelessWidget {
   Hadith hadith;
 
   HadithNameWidget({super.key, required this.hadith});
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
