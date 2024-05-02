@@ -1,9 +1,17 @@
 {
-"islami": "اسلامي",
-"sura_name": "اسم السورة",
-"quran": "القران",
-"hadith": "الحديث",
-"tasbeh": "تسبيح",
-"radio": "الاذاعة",
-"hadith_number": "رقم الحديث"
+  "islami": "اسلامي",
+  "sura_name": "اسم السورة",
+  "quran": "القران",
+  "hadith": "الحديث",
+  "tasbeh": "تسبيح",
+  "radio": "الاذاعة",
+  "hadith_number": "رقم الحديث",
+  "settings": "الاعدادات",
+  "theme": "المظهر",
+  "light": "مضيء",
+  "dark": "داكن",
+  "language": "اللغة",
+  "language_options": "اعدادات اللغة",
+  "theme_options": "اعدادات المظهر"
+
 }
