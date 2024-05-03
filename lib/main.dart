@@ -9,23 +9,22 @@ import 'package:islami/screens/home_screen/home_screen.dart';
 import 'package:islami/screens/home_screen/quran_tab/sura_screen/sura_detailes_screen.dart';
 import 'package:islami/screens/splash.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(ChangeNotifierProvider(
-      create: (context) => SettingsProvider(), child: const MyApp()));
+      create: (context) => SettingsProvider(), child: MyApp()));
 }
 
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+class MyApp extends StatelessWidget {
+  MyApp({super.key});
 
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
+  late SettingsProvider provider;
 
-class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    var provider = Provider.of<SettingsProvider>(context);
+    provider = Provider.of<SettingsProvider>(context);
+    initSharedPref();
     return ScreenUtilInit(
       designSize: const Size(360, 690),
       minTextAdapt: true,
@@ -56,5 +55,20 @@ class _MyAppState extends State<MyApp> {
         locale: Locale(provider.languageCode),
       ),
     );
+  }
+
+  void initSharedPref() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    String lang = prefs.getString('lang') ?? "en";
+    String theme = prefs.getString('theme') ?? "light";
+    provider.changeLanguage(lang);
+    switch (theme) {
+      case 'light':
+        provider.enableLightMode();
+        break;
+      case 'dark':
+        provider.enableDarkMode();
+        break;
+    }
   }
 }
