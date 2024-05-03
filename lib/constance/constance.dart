@@ -114,3 +114,5 @@ const List<String> suraNames = [
   "الفلق",
   "الناس"
 ];
+
+List<String> tasbehList =['سبحان الله ','الحمد لله','لا اله الا الله ','الله أكبر'];
